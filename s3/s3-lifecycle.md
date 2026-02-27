@@ -33,7 +33,7 @@ Inside your bucket:
 - Click on the **Management** tab
 - Select **Create lifecycle rule**
 
-![Create Lifecycle Rule](image/1.png)
+![Create Lifecycle Rule](images/1.png)
 
 ---
 
@@ -58,7 +58,7 @@ Then configure expiration:
 
 - Expire objects after **365 days**
 
-![Lifecycle Configuration Step](image/2.png)
+![Lifecycle Configuration Step](images/2.png)
 
 ---
 
@@ -67,4 +67,4 @@ Then configure expiration:
 - Review the configuration
 - Click **Create rule**
 
-![Review and Create Rule](image/3.png)
+![Review and Create Rule](images/3.png)
