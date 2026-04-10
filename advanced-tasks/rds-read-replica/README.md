@@ -42,7 +42,3 @@ wait
 - Disable replication
 - Become standalone instance
 
-## Cleanup
-
-**Console:** RDS → Databases → Select instance → Actions → Delete
-- Skip final snapshot

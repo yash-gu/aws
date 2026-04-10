@@ -33,19 +33,4 @@ Private EC2 (no internet) that can access S3 via VPC Endpoint.
 - Subnet: Private subnet (no public IP)
 - Security group: Allow HTTPS (for SSM)
 
-## 5. Test S3 Access
 
-**Console:** EC2 → Instances → Connect → Session Manager
-
-Inside the instance:
-```bash
-ping google.com  # fails - no internet
-aws s3 ls        # works - via VPC endpoint
-aws s3 cp s3://bucket/file.txt .  # works
-```
-
-## Cleanup
-
-**Console:** EC2 → Instances → Terminate
-**Console:** VPC → Endpoints → Delete endpoint
-**Console:** IAM → Roles → Delete `PrivateEC2Role`

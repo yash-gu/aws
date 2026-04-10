@@ -47,7 +47,3 @@ dig app.example.com +short
 
 **Console:** Route 53 → Health checks → View status
 
-## Cleanup
-
-**Console:** Route 53 → Hosted zones → Select records → Delete
-**Console:** Route 53 → Health checks → Select → Delete

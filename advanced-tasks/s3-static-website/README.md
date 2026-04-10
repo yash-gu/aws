@@ -44,6 +44,5 @@ Quick setup for hosting a static site on S3.
 **Console:** S3 → Bucket → Properties → Static website hosting
 - URL: `http://my-site-unique.s3-website-us-east-1.amazonaws.com`
 
-## Cleanup
 
-**Console:** S3 → Bucket → Empty → Delete bucket
+

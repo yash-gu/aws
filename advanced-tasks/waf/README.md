@@ -27,16 +27,3 @@ Attach WAF to ALB with SQL injection, rate limiting, and geo-blocking rules.
 - Destination: CloudWatch Logs
 - Log group: `/aws/waf/my-webacl`
 
-## 4. Test
-
-```bash
-# SQL injection test (should be blocked)
-curl -v "http://your-alb/?id=1%27%20OR%20%271%27%3D%271"
-
-# Normal request (should pass)
-curl -v "http://your-alb/?id=123"
-```
-
-## Cleanup
-
-**Console:** WAF & Shield → Web ACLs → `my-webacl` → Delete

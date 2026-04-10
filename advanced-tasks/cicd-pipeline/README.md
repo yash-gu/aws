@@ -54,9 +54,3 @@ Stages:
 
 **Console:** CodePipeline → `app-pipeline` → Release change
 
-## Cleanup
-
-**Console:** CodePipeline → `app-pipeline` → Delete
-**Console:** CodeDeploy → Applications → `app-deploy` → Delete
-**Console:** CodeBuild → `app-build` → Delete
-**Console:** S3 → Empty and delete bucket

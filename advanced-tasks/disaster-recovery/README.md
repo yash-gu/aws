@@ -35,17 +35,3 @@ S3 cross-region replication, RDS read replicas, and AMI backups.
 
 **Console:** EC2 → AMIs → Select → Actions → Copy AMI
 - Destination: us-west-2
-
-## RPO/RTO
-
-| Component | RPO | RTO |
-|-----------|-----|-----|
-| S3 | 15 min | 0 |
-| RDS | 5 min | 10 min |
-| EC2 | 24 hrs | 20 min |
-
-## Cleanup
-
-**Console:** S3 → Empty and delete buckets
-**Console:** RDS → Delete replica
-**Console:** EC2 → AMIs → Deregister

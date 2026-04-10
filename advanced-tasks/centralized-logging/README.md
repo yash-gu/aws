@@ -5,15 +5,17 @@ VPC Flow Logs, ALB logs, and CloudTrail to centralized S3 with lifecycle policie
 ## 1. Create Log Bucket
 
 **Console:** S3 → Create bucket
-- Name: `centralized-logs-<account-id>`
+- Name: `centralized-logs'
 - Region: us-east-1
 - Enable: Versioning
+![alt text](image.png)
 
 **Console:** S3 → Bucket → Management → Lifecycle rules
 - Rule: `archive`
 - 30 days → STANDARD_IA
 - 90 days → GLACIER
 - 365 days → Delete
+![alt text](image-1.png)
 
 ## 2. VPC Flow Logs
 
@@ -22,6 +24,7 @@ VPC Flow Logs, ALB logs, and CloudTrail to centralized S3 with lifecycle policie
 - Filter: All traffic
 - Destination: S3 bucket
 - Bucket: `centralized-logs-<account-id>/vpc-flow-logs/`
+![alt text](image-2.png)
 
 ## 3. ALB Access Logs
 
@@ -38,15 +41,6 @@ VPC Flow Logs, ALB logs, and CloudTrail to centralized S3 with lifecycle policie
 - Multi-region trail: Yes
 - Log file validation: Yes
 
-## 5. Athena Query (Optional)
 
-**Console:** Athena → Query editor
-```sql
-CREATE DATABASE IF NOT EXISTS logs;
-```
 
-## Cleanup
 
-**Console:** S3 → Bucket → Empty → Delete bucket
-**Console:** VPC → Flow logs → Delete
-**Console:** CloudTrail → Trails → Stop logging → Delete trail

@@ -39,17 +39,3 @@ Deploy MySQL RDS in private subnet with Multi-AZ.
 **Console:** RDS → Databases → `my-mysql-db` → Connectivity & security
 - Endpoint: `my-mysql-db.xxxxx.us-east-1.rds.amazonaws.com`
 
-## 5. Connect from EC2
-
-```bash
-# Install MySQL client
-sudo yum install -y mariadb105
-
-# Connect
-mysql -h my-mysql-db.xxxxx.us-east-1.rds.amazonaws.com -u admin -p
-```
-
-## Cleanup
-
-**Console:** RDS → Databases → `my-mysql-db` → Actions → Delete
-- Skip final snapshot
