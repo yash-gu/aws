@@ -4,7 +4,7 @@ Quick setup for IAM groups, MFA, and least privilege policies.
 
 ## 1. Enable MFA for Root
 
-**Console:** IAM → Dashboard → Add MFA → Activate MFA (use Google Authenticator)
+1.png
 
 ## 2. Create Groups
 
@@ -12,58 +12,31 @@ Quick setup for IAM groups, MFA, and least privilege policies.
 - Name: `Admins`
 - Attach policy: AdministratorAccess
 
-**Console:** IAM → User groups → Create group
+
 - Name: `Developers`
 - Attach policy: PowerUserAccess
+![alt text](<Screenshot 2026-04-10 at 9.30.05 AM.png>)
 
-**Console:** IAM → User groups → Create group
 - Name: `ReadOnly`
 - Attach policy: ReadOnlyAccess
+![alt text](image.png)
+
+
+![alt text](image-1.png)
 
 ## 3. Custom S3 Restricted Policy
 
 **Console:** IAM → Policies → Create policy → JSON
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "s3:*",
-            "Resource": "*",
-            "Condition": {
-                "StringNotEquals": {
-                    "s3:ResourceAccount": "123456789012"
-                }
-            }
-        },
-        {
-            "Effect": "Deny",
-            "Action": "s3:DeleteBucket",
-            "Resource": "*"
-        }
-    ]
-}
-```
+
+![alt text](image-2.png)
 - Name: `S3RestrictedAccess`
+![alt text](image-3.png)
 
 ## 4. Create Users
 
-**Console:** IAM → Users → Add users
-- User name: `john-dev`
-- Credentials: Console password + Access key
-- Groups: `Developers`
+![alt text](image-4.png)
 
 ## 5. Password Policy
 
-**Console:** IAM → Account settings → Password policy → Edit
-- Minimum length: 12
-- Require symbols, numbers, uppercase, lowercase
-- Password expiration: 90 days
-- Prevent reuse: 5 passwords
+![alt text](image-5.png)
 
-## Cleanup
-
-**Console:** IAM → Users → `john-dev` → Delete
-**Console:** IAM → User groups → Select group → Delete
-**Console:** IAM → Policies → `S3RestrictedAccess` → Delete
