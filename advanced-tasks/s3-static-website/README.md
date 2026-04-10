@@ -9,6 +9,7 @@ Quick setup for hosting a static site on S3.
 - Region: us-east-1
 - Disable: Block all public access
 - Enable: Versioning
+![alt text](image.png)
 
 ## 2. Enable Website Hosting
 
@@ -16,21 +17,12 @@ Quick setup for hosting a static site on S3.
 - Enable
 - Index document: `index.html`
 - Error document: `error.html`
+![alt text](image-1.png)
 
 ## 3. Set Public Access Policy
 
 **Console:** S3 → Bucket → Permissions → Bucket policy → Edit
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [{
-        "Effect": "Allow",
-        "Principal": "*",
-        "Action": "s3:GetObject",
-        "Resource": "arn:aws:s3:::my-site-unique/*"
-    }]
-}
-```
+![alt text](image-2.png)
 
 ## 4. Upload Files
 
