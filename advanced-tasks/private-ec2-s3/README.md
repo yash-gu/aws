@@ -6,7 +6,9 @@ Private EC2 (no internet) that can access S3 via VPC Endpoint.
 
 **Console:** VPC → Create VPC
 - CIDR: 10.0.0.0/16
+![alt text](image.png)
 - Create subnet: 10.0.1.0/24 (private, no auto-assign public IP)
+
 - No internet gateway
 
 ## 2. Create S3 VPC Endpoint
@@ -18,13 +20,15 @@ Private EC2 (no internet) that can access S3 via VPC Endpoint.
 - VPC: Your VPC
 - Route tables: Select private route table
 
+![alt text](image-1.png)
+
 ## 3. Create IAM Role
 
 **Console:** IAM → Roles → Create role
 - Trusted entity: EC2
 - Policy: AmazonS3ReadOnlyAccess
 - Name: `PrivateEC2Role`
-
+![alt text](image-2.png)
 ## 4. Launch Private EC2
 
 **Console:** EC2 → Launch instances

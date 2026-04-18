@@ -9,7 +9,7 @@ Deploy MySQL RDS in private subnet with Multi-AZ.
 - VPC: Select your VPC
 - Availability zones: 2 zones
 - Subnets: Private subnets
-
+![alt text](image.png)
 ## 2. Create RDS Security Group
 
 **Console:** EC2 → Security groups → Create security group
