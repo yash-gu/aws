@@ -12,11 +12,15 @@ Attach WAF to ALB with SQL injection, rate limiting, and geo-blocking rules.
   - AWS Managed Rules → SQL injection (Priority 1)
   - Rate limiting: 1000 requests/5min per IP (Priority 2)
   - Geographic match: Block KP, IR, SY (Priority 3)
+  ![
+  ](image.png)
+  ![alt text](image-1.png)
 
 ## 2. Associate with ALB
 
 **Console:** WAF & Shield → Web ACLs → `my-webacl` → Associated AWS resources → Add resources
 - Select your ALB from the list
+![alt text](image-2.png)
 
 ## 3. Enable Logging
 
