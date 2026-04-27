@@ -3,8 +3,7 @@
 Create read replica, separate read/write traffic, and simulate load.
 
 ## 1. Create Primary DB
-
-**Console:** RDS → Create database
+RDS → Create database
 - Engine: MySQL
 - Template: Free tier
 - DB instance identifier: `primary-db`
@@ -14,15 +13,13 @@ Create read replica, separate read/write traffic, and simulate load.
 - Allocated storage: 20 GB
 
 ## 2. Create Read Replica
-
-**Console:** RDS → Databases → `primary-db` → Actions → Create read replica
+RDS → Databases → `primary-db` → Actions → Create read replica
 - DB instance identifier: `primary-db-replica`
 - Same region or different region
 - Instance class: db.t3.micro
 
 ## 3. Verify Replication
-
-**Console:** RDS → Databases → `primary-db-replica`
+RDS → Databases → `primary-db-replica`
 - Check Replica lag in Monitoring tab
 - Connect and test: read works, write fails
 
@@ -37,8 +34,7 @@ wait
 ```
 
 ## 5. Promote to Standalone
-
-**Console:** RDS → Databases → `primary-db-replica` → Actions → Promote
+RDS → Databases → `primary-db-replica` → Actions → Promote
 - Disable replication
 - Become standalone instance
 
