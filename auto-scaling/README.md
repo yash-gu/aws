@@ -1,10 +1,6 @@
-"""# AWS Auto Scaling Group (ASG) Setup Guide (Console Only)
 
-This guide covers the essential steps to create a self-healing, auto-scaling architecture using the AWS Management Console.
 
----
-
-## Phase 1: Create the Golden Image (AMI)
+# 1: Create the Golden Image (AMI)
 Before the ASG can launch instances, it needs a pre-configured image of your server.
 
 1. Launch a single EC2 instance and install your application (e.g., Nginx, Node.js).
@@ -14,11 +10,10 @@ Before the ASG can launch instances, it needs a pre-configured image of your ser
     * Click **Actions** > **Image and templates** > **Create image**.
     * **Image name:** `webapp-golden-image`.
     * Click **Create image**.
-4.  **Wait:** Navigate to **AMIs** in the left sidebar. Wait until the status is **Available**.
 
 ---
 
-## Phase 2: Create the Launch Template
+##  Create the Launch Template
 The Launch Template defines the "specs" for every new instance the ASG creates.
 
 1.  **Navigate:** Go to **EC2 Console** > **Launch Templates** > **Create launch template**.
@@ -41,7 +36,7 @@ bash
 
 ---
 
-## Phase 3: Create the Auto Scaling Group
+## 3: Create the Auto Scaling Group
 The ASG manages the fleet of instances and responds to load or failures.
 
 1.  **Navigate:** Go to **EC2 Console** > **Auto Scaling Groups** > **Create Auto Scaling group**.
@@ -65,17 +60,8 @@ The ASG manages the fleet of instances and responds to load or failures.
 
 ---
 
-## Phase 4: Verification
+## 4: Verification
 1.  **Check Instances:** Go to **EC2 Instances**. You should see 2 new instances starting up automatically.
 2.  **The "Terminator" Test:** Terminate one of these instances manually.
 3.  **Result:** Within a few minutes, the ASG should detect the failure and launch a replacement instance to maintain the desired count of 2.
 
----
-
-## Compulsory Configuration Summary
-| Setting | Selection | Importance |
-| :--- | :--- | :--- |
-| **Health Check** | **ELB** | Replaces instances if the application (not just the VM) stops responding. |
-| **Availability Zones** | **2 or more** | Ensures your site stays up even if an entire AWS data center goes down. |
-| **Desired Capacity** | **Minimum 2** | Necessary to verify that the Load Balancer is distributing traffic correctly. |
-"""
