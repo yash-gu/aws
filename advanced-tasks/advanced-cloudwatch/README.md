@@ -9,7 +9,6 @@ Custom metrics, log-based metric filters, dashboard, and alerts for error rate >
 - Metric name: `OrdersPerMinute`
 - Value: 42
 
-```
 
 ## 2. Log-Based Metric Filters
 
