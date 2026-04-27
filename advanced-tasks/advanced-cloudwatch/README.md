@@ -9,11 +9,6 @@ Custom metrics, log-based metric filters, dashboard, and alerts for error rate >
 - Metric name: `OrdersPerMinute`
 - Value: 42
 
-**CLI:** CloudWatch Agent (required)
-```bash
-wget https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
-sudo rpm -U amazon-cloudwatch-agent.rpm
-sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 ```
 
 ## 2. Log-Based Metric Filters
@@ -40,8 +35,3 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 - Threshold: > 5%
 - Period: 5 minutes
 - Evaluation periods: 2
-
-## Cleanup
-
-**Console:** CloudWatch → Alarms → Select → Delete
-**Console:** CloudWatch → Dashboards → `main` → Delete
